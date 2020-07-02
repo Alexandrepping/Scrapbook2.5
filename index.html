@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
+
     <title>Mural de Recados</title>
   </head>
   <body>
@@ -26,7 +27,6 @@
               type="text"
               class="form-control"
               id="messageTitle"
-              required
               placeholder="Digite o título da mensagem!"
             />
 
@@ -48,70 +48,11 @@
             </button>
           </div>
 
-          <div id="scrapsfield" class="d-flex mt-5">
-            <!-- <div class="card text-white bg-dark m-2">
-              <div class="card-header" id="titulodoRecado"></div>
-              <div class="card-body">
-                <p class="card-text" id="areaRecado"></p>
-              </div>
-            </div> -->
-          </div>
+          <div id="scrapsfield" class="d-flex mt-5"></div>
         </div>
       </div>
     </main>
 
-    <script>
-      let recados = [
-        {
-          titulo: "",
-          mensagem: "",
-        },
-      ];
-      document.getElementById("messageTitle").focus();
-      function geraRecado() {
-        // let scrapsfield = document.getElementById("scrapsfield");
-
-        let tituloRecado = document.getElementById("messageTitle").value; //aqui tá pegando o valor escrito no titulo
-        let mensagemRecado = document.getElementById("messageBody").value; //aqui tá pegando o valor escrito no textArea
-
-        if (tituloRecado == "") {
-          alert("Preencha o campo título");
-          document.getElementById("messageTitle").focus();
-          return false;
-        } else if (mensagemRecado == "") {
-          alert("Preencha o campo mensagem");
-
-          document.getElementById("messageBody").focus();
-          return false;
-        } else {
-          for (let i = 0; i < recados.length; i++) {
-            scrapsfield.innerHTML += // aqui cria os card no HTML para depois por as mensagens
-              '<div class="card text-white bg-success m-2"> ' +
-              '<div class ="card-header"  id="titulodoRecado"> ' +
-              ` ${tituloRecado}` +
-              '</div> <div class="card-body"> <p class="card-text" id="areaRecado">' +
-              `${mensagemRecado}` +
-              "</p>" +
-              "</div> </div>";
-            document.getElementById(
-              "titulodoRecado"
-            ).querySelector = tituloRecado; // aqui escreve no card-header
-            recados.titulo = tituloRecado;
-
-            document.getElementById(
-              "areaRecado"
-            ).querySelector = mensagemRecado; // aqui escreve no card-body
-            recados.mensagem = mensagemRecado;
-
-            console.log(scrapsfield);
-          }
-        }
-
-        document.getElementById("messageTitle").value = ""; // aqui limpa o campo titulo
-        document.getElementById("messageBody").value = ""; // aqui limpa o campo area
-
-        document.getElementById("messageTitle").focus();
-      }
-    </script>
+    <script></script>
   </body>
 </html>
